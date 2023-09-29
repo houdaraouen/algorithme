@@ -1,0 +1,36 @@
+ALGORITHM houda
+VAR
+    sentence:STRING
+    word,char,voyl,i:INTEGER
+BEGIN
+write('enter your sentence')
+read (sentence);
+    FOR i FROM 0 TO sentence-1 STEP 1  DO
+    // calculate the number of word
+        IF (sentence[i]='') THEN
+            word=word+1;
+        END_IF
+        // calculate the number of characters
+        IF (sentence[i]<>'.') THEN
+            char=char+1;
+        END_IF
+        // calculate the number of voyl
+        SWITCH (sentence[i]) DO
+            case a : voyl=voyl+1; break
+            case e : voyl=voyl+1; break
+            case o : voyl=voyl+1; break
+            case u : voyl=voyl+1; break
+            case i : voyl=voyl+1; break
+            case y : voyl=voyl+1; break
+            default : set_instructions
+        END_SWITCH
+    END_FOR
+    write (word);
+    write (char);
+    writa (voyl);
+END
+VAR
+    set_declarations
+BEGIN
+    set_instructions
+END
